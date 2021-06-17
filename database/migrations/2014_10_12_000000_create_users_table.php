@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('company_name')->nullable();
-            $table->string('country')->default('Bangladesh');
-            $table->string('address');
-            $table->string('zip_code');
+            $table->string('country')->default('Bangladesh')->nullable();
+            $table->string('address')->nullable();
+            $table->string('zip_code')->nullable();
             $table->enum('type', ['administrator', 'client', 'reseller', 'staff']);
             $table->boolean('active')->default(true);
             $table->rememberToken();

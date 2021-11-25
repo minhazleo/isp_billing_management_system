@@ -103,7 +103,7 @@ class HomeController extends Controller
             'zip_code' => request('zip_code'),
             'type' => 'client',
         ]);
-        
+
         Client::create([
             'user_id' => $user->id,
             'package_id' => request('package'),
@@ -165,12 +165,12 @@ class HomeController extends Controller
             'address' => 'required|string|max:150',
             'zip_code' => 'required|integer',
         ]);
-        
+
         $account_status = false;
         if (request('account_status') == 'active') {
             $account_status = true;
         }
-        
+
         $user = User::create([
             'name' => request('name'),
             'email' => request('email'),
